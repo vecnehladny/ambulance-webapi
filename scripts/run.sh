@@ -33,7 +33,7 @@ case $command in
         mmongo up
         ;;
     "docker")
-        docker build -t vecnehladny/ambulance-wl-webapi:local-build -f ${ProjectRoot}/build/docker/Dockerfile .
+        docker build -t vecnehladny/ambulance-wl-webapi:local-build -f $projectRoot/build/docker/Dockerfile .
         ;;
     *)
         echo "Unknown command: $command"
