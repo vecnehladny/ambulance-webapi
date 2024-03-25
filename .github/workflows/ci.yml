@@ -52,7 +52,7 @@ jobs:
       id: meta
       uses: docker/metadata-action@v4.6.0
       with:
-        images: <docker_id>/ambulance-wl-webapi
+        images: vecnehladny/ambulance-wl-webapi
         tags: |
             type=schedule
             type=ref,event=branch
