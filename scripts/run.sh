@@ -23,11 +23,17 @@ case $command in
         go run "$projectRoot/cmd/ambulance-api-service"
         mongo down
         ;;
+    "test")
+        go test -v ./...
+        ;;
     "openapi")
         docker run --rm -ti -v "$projectRoot:/local" openapitools/openapi-generator-cli generate -c /local/scripts/generator-cfg.yaml
         ;;
     "mongo")
         mmongo up
+        ;;
+    "docker")
+        docker build -t vecnehladny/ambulance-wl-webapi:local-build -f ${ProjectRoot}/build/docker/Dockerfile .
         ;;
     *)
         echo "Unknown command: $command"
